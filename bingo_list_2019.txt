@@ -1,4 +1,3 @@
-Bus arrives too late
 'ISS'
 'IIS'
 'Kuipers' (by other speaker or host)
@@ -34,7 +33,14 @@ Bus arrives too late
 'Facebook'
 'Google'
 'Climate change'
-Wrong event name
+'My research'
+'Green energy'
+'You'll never need to do <insert something> again'
+'Self-driving <insert vehicle>'
+Bus arrives too late (after 10.00h)
+Bus arrives too early (before 9.00h)
+Had to wake up before 7.00h
+Wrong event name is pronounced
 Wrong location of event is mentioned
 The free bottle is filled with some alcohol
 Talk ends too late
