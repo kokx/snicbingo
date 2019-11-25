@@ -153,4 +153,8 @@ app.get('/', (req, res) => {
     return res.render('index');
 });
 
+// static JS and CSS
+app.use('/js', express.static('./js'));
+app.use('/css', express.static('./css'));
+
 app.listen(5000, () => console.log('Listening....'));
