@@ -2,9 +2,9 @@
 
 {% macro sq(num, text, value) %}
     {% if (value === 1) %}
-        <td class="marked">{{text}}</td>
+        <td class="marked" id="sq-{{num}}">{{text}}</td>
     {% else %}
-        <td class="unmarked">{{text}}</td>
+        <td class="unmarked" id="sq-{{num}}">{{text}}</td>
     {% endif %}
 {% endmacro %}
 
