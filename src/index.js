@@ -118,7 +118,7 @@ app.post('/create', (req, res) => {
     stmt.run(vals);
     stmt.finalize();
 
-    res.send("Veel plezier met <a href='/card/" + shortcode +"'>Bingo!</a>");
+    res.redirect('/card/' + shortcode);
 });
 
 app.get('/card/:code', (req, res) => {
