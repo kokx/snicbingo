@@ -14,6 +14,7 @@ db.serialize(() => {
     db.run(
         'CREATE TABLE IF NOT EXISTS cards ' +
             '(id integer not null primary key autoincrement, ' +
+            'shortcode varchar not null, ' +
             'name varchar not null, ' +
             'sq11 varchar not null, ' +
             'sq12 varchar not null, ' +
@@ -71,7 +72,23 @@ db.serialize(() => {
 });
 
 app.post('/create', (req, res) => {
-    console.log(req.body);
+    const sqcols = ['sq11', 'sq12', 'sq13', 'sq14', 'sq15',
+                    'sq21', 'sq22', 'sq23', 'sq24', 'sq25',
+                    'sq31', 'sq32', 'sq33', 'sq34', 'sq35',
+                    'sq41', 'sq42', 'sq43', 'sq44', 'sq45',
+                    'sq51', 'sq52', 'sq53', 'sq54', 'sq55']
+    const sqcolsc = sqcols.map(t => '$' + t);
+    const stmt = db.prepare("INSERT INTO cards (shortcode, name, " + sqcols.join(', ') + ") VALUES ($shortcode, $name, " + sqcolsc.join(', ') + ")");
+
+    let vals = {
+        $shortcode: 'bla',
+        $name: req.body.name
+    };
+
+    sqcols.forEach(col => { vals['$' + col] = 'TODO RANDOM'; });
+
+    stmt.run(vals);
+    stmt.finalize();
 
     res.send("Test");
 });
