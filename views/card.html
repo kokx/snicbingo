@@ -2,50 +2,66 @@
 
 {% macro sq(num, text, value) %}
     {% if (value === 1) %}
-        <td class="marked" id="sq-{{num}}">{{text}}</td>
+        <td class="marked" id="sq-{{num}}" onclick="mark({{num}})">{{text}}</td>
     {% else %}
-        <td class="unmarked" id="sq-{{num}}">{{text}}</td>
+        <td class="unmarked" id="sq-{{num}}" onclick="mark({{num}})">{{text}}</td>
     {% endif %}
 {% endmacro %}
+
+{% block head %}
+<style type="text/css">
+    .marked {
+        background-color: green;
+    }
+    .unmarked {
+        background-color: yellow;
+    }
+</style>
+<script type="text/javascript">
+    function mark(num) {
+        fetch('/mark/{{shortcode}}/' + num);
+    }
+</script>
+{% endblock %}
 
 {% block content %}
 Hier is je bingokaart, {{name}}!
 
 <table border="1">
     <tr>
-        {{sq('11', sq11, r11)}}
-        {{sq('12', sq12, r12)}}
-        {{sq('13', sq13, r13)}}
-        {{sq('14', sq14, r14)}}
-        {{sq('15', sq15, r15)}}
+        {{sq('11', sq11, b11)}}
+        {{sq('12', sq12, b12)}}
+        {{sq('13', sq13, b13)}}
+        {{sq('14', sq14, b14)}}
+        {{sq('15', sq15, b15)}}
     </tr>
     <tr>
-        {{sq('21', sq21, r21)}}
-        {{sq('22', sq22, r22)}}
-        {{sq('23', sq23, r23)}}
-        {{sq('24', sq24, r24)}}
-        {{sq('25', sq25, r25)}}
+        {{sq('21', sq21, b21)}}
+        {{sq('22', sq22, b22)}}
+        {{sq('23', sq23, b23)}}
+        {{sq('24', sq24, b24)}}
+        {{sq('25', sq25, b25)}}
     </tr>
     <tr>
-        {{sq('31', sq31, r31)}}
-        {{sq('32', sq32, r32)}}
-        {{sq('33', sq33, r33)}}
-        {{sq('34', sq34, r34)}}
-        {{sq('35', sq35, r35)}}
+        {{sq('31', sq31, b31)}}
+        {{sq('32', sq32, b32)}}
+        {{sq('33', sq33, b33)}}
+        {{sq('34', sq34, b34)}}
+        {{sq('35', sq35, b35)}}
     </tr>
     <tr>
-        {{sq('41', sq41, r41)}}
-        {{sq('42', sq42, r42)}}
-        {{sq('43', sq43, r43)}}
-        {{sq('44', sq44, r44)}}
-        {{sq('45', sq45, r45)}}
+        {{sq('41', sq41, b41)}}
+        {{sq('42', sq42, b42)}}
+        {{sq('43', sq43, b43)}}
+        {{sq('44', sq44, b44)}}
+        {{sq('45', sq45, b45)}}
     </tr>
     <tr>
-        {{sq('51', sq51, r51)}}
-        {{sq('52', sq52, r52)}}
-        {{sq('53', sq53, r53)}}
-        {{sq('54', sq54, r54)}}
-        {{sq('55', sq55, r55)}}
+        {{sq('51', sq51, b51)}}
+        {{sq('52', sq52, b52)}}
+        {{sq('53', sq53, b53)}}
+        {{sq('54', sq54, b54)}}
+        {{sq('55', sq55, b55)}}
     </tr>
 </table>
 {% endblock %}

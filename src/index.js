@@ -100,7 +100,7 @@ app.post('/create', (req, res) => {
                     'sq21', 'sq22', 'sq23', 'sq24', 'sq25',
                     'sq31', 'sq32', 'sq33', 'sq34', 'sq35',
                     'sq41', 'sq42', 'sq43', 'sq44', 'sq45',
-                    'sq51', 'sq52', 'sq53', 'sq54', 'sq55']
+                    'sq51', 'sq52', 'sq53', 'sq54', 'sq55'];
     const sqcolsc = sqcols.map(t => '$' + t);
     const stmt = db.prepare("INSERT INTO cards (shortcode, name, " + sqcols.join(', ') + ") VALUES ($shortcode, $name, " + sqcolsc.join(', ') + ")");
 
@@ -118,7 +118,7 @@ app.post('/create', (req, res) => {
     stmt.run(vals);
     stmt.finalize();
 
-    res.send("Test + <a href='/card/" + shortcode +"'>Bingo!</a>");
+    res.send("Veel plezier met <a href='/card/" + shortcode +"'>Bingo!</a>");
 });
 
 app.get('/card/:code', (req, res) => {
@@ -129,6 +129,24 @@ app.get('/card/:code', (req, res) => {
             res.send("Nope.");
         }
     });
+});
+
+app.get('/mark/:code/:sq', (req, res) => {
+    const nums = ['11', '12', '13', '14', '15',
+                  '21', '22', '23', '24', '25',
+                  '31', '32', '33', '34', '35',
+                  '41', '42', '43', '44', '45',
+                  '51', '52', '53', '54', '55'];
+    if (nums.indexOf(req.params.sq) === -1) {
+        res.send('Nice try');
+    }
+    const num = 'b' + req.params.sq;
+    const form = num + "= (" + num + " + 1) % 2";
+
+    const stmt = db.prepare("UPDATE cards SET " + form + "  WHERE shortcode = ?");
+    stmt.run([req.params.code])
+
+    res.send('Test');
 });
 
 app.get('/', (req, res) => {
