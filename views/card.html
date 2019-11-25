@@ -20,6 +20,12 @@
 <script type="text/javascript">
     function mark(num) {
         fetch('/mark/{{shortcode}}/' + num);
+        var el = document.getElementById('sq-' + num);
+        if (el.className === 'marked') {
+            el.className = 'unmarked';
+        } else {
+            el.className = 'marked';
+        }
     }
 </script>
 {% endblock %}
