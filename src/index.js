@@ -5,15 +5,19 @@ const sqlite = require('sqlite3');
 const crypto = require('crypto');
 const fs = require('fs');
 const _ = require('lodash');
-const mustacheExpress = require('mustache-express');
+const expressNunjucks = require('express-nunjucks');
 
 const app = express();
+
+const isDev = app.get('env') === 'development';
 
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
-app.engine('mustache', mustacheExpress());
-app.set('view engine', 'mustache');
+const njk = expressNunjucks(app, {
+    watch: isDev,
+    noCache: isDev
+});
 app.set('views', './views');
 
 // initialize database
