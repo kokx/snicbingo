@@ -2,7 +2,9 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const sqlite = require('sqlite3');
-const crypto = require("crypto");
+const crypto = require('crypto');
+const fs = require('fs');
+const _ = require('lodash');
 
 const app = express();
 
@@ -72,6 +74,16 @@ db.serialize(() => {
     );
 });
 
+let bingo = ['NOT INITIALIZED PROPERLY'];
+
+// read bingo list
+fs.readFile('./bingo_list_2019.txt', 'utf8', (err, data) => {
+    if (err) {
+        console.log(err);
+        return;
+    }
+    bingo = data.trim().split(/\r?\n/);
+});
 
 
 app.post('/create', (req, res) => {
@@ -90,7 +102,9 @@ app.post('/create', (req, res) => {
         $name: req.body.name
     };
 
-    sqcols.forEach(col => { vals['$' + col] = 'TODO RANDOM'; });
+    const bingoSample = _.sampleSize(bingo, 25);
+
+    sqcols.forEach(col => { vals['$' + col] = bingoSample.pop(); });
 
     stmt.run(vals);
     stmt.finalize();
