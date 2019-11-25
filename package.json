@@ -1,0 +1,16 @@
+{
+  "name": "snicbingo",
+  "version": "1.0.0",
+  "description": "SNiC Bingo",
+  "main": "src/index.js",
+  "author": "Pieter Kokx",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "scripts": {
+    "start": "node src/index.js"
+  }
+}
