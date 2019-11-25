@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const sqlite = require('sqlite3');
+const crypto = require("crypto");
 
 const app = express();
 
@@ -71,6 +72,8 @@ db.serialize(() => {
     );
 });
 
+
+
 app.post('/create', (req, res) => {
     const sqcols = ['sq11', 'sq12', 'sq13', 'sq14', 'sq15',
                     'sq21', 'sq22', 'sq23', 'sq24', 'sq25',
@@ -80,8 +83,10 @@ app.post('/create', (req, res) => {
     const sqcolsc = sqcols.map(t => '$' + t);
     const stmt = db.prepare("INSERT INTO cards (shortcode, name, " + sqcols.join(', ') + ") VALUES ($shortcode, $name, " + sqcolsc.join(', ') + ")");
 
+    const shortcode = crypto.randomBytes(10).toString('hex');
+
     let vals = {
-        $shortcode: 'bla',
+        $shortcode: shortcode,
         $name: req.body.name
     };
 
@@ -90,7 +95,15 @@ app.post('/create', (req, res) => {
     stmt.run(vals);
     stmt.finalize();
 
-    res.send("Test");
+    res.send("Test + <a href='/card/" + shortcode +"'>Bingo!</a>");
+});
+
+app.get('/card/:code', (req, res) => {
+    db.all("SELECT * FROM cards WHERE shortcode = ?", [req.params.code], (err, rows) => {
+        console.log(rows);
+    });
+
+    res.send(req.params);
 });
 
 app.use('/', express.static('public/', { maxAge: 3600*1000 }));
