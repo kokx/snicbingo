@@ -1,43 +1,51 @@
 {% extends "layout.html" %}
 
+{% macro sq(num, text, value) %}
+    {% if (value === 1) %}
+        <td class="marked">{{text}}</td>
+    {% else %}
+        <td class="unmarked">{{text}}</td>
+    {% endif %}
+{% endmacro %}
+
 {% block content %}
 Hier is je bingokaart, {{name}}!
 
 <table border="1">
     <tr>
-        <td>{{sq11}}</td>
-        <td>{{sq12}}</td>
-        <td>{{sq13}}</td>
-        <td>{{sq14}}</td>
-        <td>{{sq15}}</td>
+        {{sq('11', sq11, r11)}}
+        {{sq('12', sq12, r12)}}
+        {{sq('13', sq13, r13)}}
+        {{sq('14', sq14, r14)}}
+        {{sq('15', sq15, r15)}}
     </tr>
     <tr>
-        <td>{{sq21}}</td>
-        <td>{{sq22}}</td>
-        <td>{{sq23}}</td>
-        <td>{{sq24}}</td>
-        <td>{{sq25}}</td>
+        {{sq('21', sq21, r21)}}
+        {{sq('22', sq22, r22)}}
+        {{sq('23', sq23, r23)}}
+        {{sq('24', sq24, r24)}}
+        {{sq('25', sq25, r25)}}
     </tr>
     <tr>
-        <td>{{sq31}}</td>
-        <td>{{sq32}}</td>
-        <td>{{sq33}}</td>
-        <td>{{sq34}}</td>
-        <td>{{sq35}}</td>
+        {{sq('31', sq31, r31)}}
+        {{sq('32', sq32, r32)}}
+        {{sq('33', sq33, r33)}}
+        {{sq('34', sq34, r34)}}
+        {{sq('35', sq35, r35)}}
     </tr>
     <tr>
-        <td>{{sq41}}</td>
-        <td>{{sq42}}</td>
-        <td>{{sq43}}</td>
-        <td>{{sq44}}</td>
-        <td>{{sq45}}</td>
+        {{sq('41', sq41, r41)}}
+        {{sq('42', sq42, r42)}}
+        {{sq('43', sq43, r43)}}
+        {{sq('44', sq44, r44)}}
+        {{sq('45', sq45, r45)}}
     </tr>
     <tr>
-        <td>{{sq51}}</td>
-        <td>{{sq52}}</td>
-        <td>{{sq53}}</td>
-        <td>{{sq54}}</td>
-        <td>{{sq55}}</td>
+        {{sq('51', sq51, r51)}}
+        {{sq('52', sq52, r52)}}
+        {{sq('53', sq53, r53)}}
+        {{sq('54', sq54, r54)}}
+        {{sq('55', sq55, r55)}}
     </tr>
 </table>
 {% endblock %}
