@@ -51,7 +51,7 @@ Visitor corrects speaker
 Error in the slides
 No meat during lunch/dinner
 Snapchat filter
-Negative message(s) on social media
+Negative posts about the event on social media
 #ResilIT
 Badge-scanner doesn't work
 Gifts with discount
@@ -87,3 +87,5 @@ Any sponsor is mentioned by the host
 Committee is stressed/runs around
 Speaker talks about things he does with data
 Dutch university is mentioned
+Live social media feed
+Nedap has a large machine/item in their stand

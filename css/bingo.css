@@ -1,0 +1,11 @@
+body {
+	background-color: #f9f9f9;
+}
+
+.marked {
+	background-color: #40e0d0;
+}
+
+.unmarked {
+	background-color: #f3f3f3;
+}
