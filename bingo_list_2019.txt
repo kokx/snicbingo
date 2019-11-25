@@ -1,0 +1,83 @@
+Bus arrives too late
+'ISS'
+'IIS'
+'Kuipers' (by other speaker or host)
+'Security'
+'(Smart) Blockchain'
+'Big data'
+'IoT/Internet of Things'
+'Privacy issues'
+'Buy my <insert merchandise>'
+'Quantum (computer)'
+'Artificial intelligence/AI'
+'Sustainability/Sustainable'
+'Deforestation'
+'Climate change'
+'Urbanisation'
+'Smart home'
+'Smart city'
+'Revolutionary'
+'Surveillance state'
+'Society 4.0'
+'DDoS'
+'Prototype'
+'Innovation/innovative'
+'Disaster'
+'Drone'
+'Digitalization'
+'5G'
+'China'
+'Trust'
+'Global Challenge'
+'Start up(s)'
+'SpaceX'
+'Facebook'
+'Google'
+'Climate change'
+Wrong event name
+Wrong location of event is mentioned
+The free bottle is filled with some alcohol
+Talk ends too late
+Talk ends too early
+BVO'tje is bought during the event
+Visitor falls asleep
+Visitor corrects speaker
+Error in the slides
+No meat during lunch/dinner
+Snapchat filter
+Negative message(s) on social media
+#ResilIT
+Badge-scanner doesn't work
+Gifts with discount
+Gift from Twente University or Thalia
+Speaker tries to censor a company name
+Speaker promotes his company
+Speaker speaks Dutch
+Dutch in slides
+Announcement in Dutch
+Wrong slide is projected/speaker messes up with slides
+Video played directly on YouTube or web browser
+Presentation not working
+Sound not working (correctly)
+Impossible to hear speaker
+Question about something that was already explained
+Question that starts a discussion
+Alcohol is dropped on the ground
+Broken glass
+Speaker corrects introduction
+Very long (>5 minutes) of clapping
+Catchbox ends up on the ground
+Catchbox ends up in a face
+Dunglish
+Inappropiate joke by speaker
+Error on the programme
+Talk with only videos
+Slide with comic from the internet
+Government/law is blamed for something
+Third world country is mentioned
+Live demo
+Speaker tries to give life inspiration
+Any sponsor is mentioned by the host
+Committee is stressed/runs around
+Speaker talks about things he does with data
+Dutch university is mentioned
