@@ -100,7 +100,7 @@ app.post('/create', (req, res) => {
 
 app.get('/card/:code', (req, res) => {
     db.all("SELECT * FROM cards WHERE shortcode = ?", [req.params.code], (err, rows) => {
-        if (rows.length == 1) {
+        if (err === null && rows.length === 1) {
             data = rows[0];
             let tableContents = '';
             for (let i = 1; i <= 5; i++) {
