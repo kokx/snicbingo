@@ -100,10 +100,21 @@ app.post('/create', (req, res) => {
 
 app.get('/card/:code', (req, res) => {
     db.all("SELECT * FROM cards WHERE shortcode = ?", [req.params.code], (err, rows) => {
-        console.log(rows);
+        if (rows.length == 1) {
+            data = rows[0];
+            let tableContents = '';
+            for (let i = 1; i <= 5; i++) {
+                tableContents += '<tr>';
+                for (let j = 1; j <= 5; j++) {
+                    tableContents += '<td>' + data['sq' + i.toString() + j.toString()] + '</td>'
+                }
+                tableContents += '</tr>'
+            }
+            res.send('<table border="1">' + tableContents + '</table>');
+        } else {
+            res.send("Nope.");
+        }
     });
-
-    res.send(req.params);
 });
 
 app.use('/', express.static('public/', { maxAge: 3600*1000 }));
