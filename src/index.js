@@ -5,11 +5,16 @@ const sqlite = require('sqlite3');
 const crypto = require('crypto');
 const fs = require('fs');
 const _ = require('lodash');
+const mustacheExpress = require('mustache-express');
 
 const app = express();
 
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+
+app.engine('mustache', mustacheExpress());
+app.set('view engine', 'mustache');
+app.set('views', './views');
 
 // initialize database
 const db = new sqlite.Database('./snic.sqlite');
@@ -115,22 +120,15 @@ app.post('/create', (req, res) => {
 app.get('/card/:code', (req, res) => {
     db.all("SELECT * FROM cards WHERE shortcode = ?", [req.params.code], (err, rows) => {
         if (err === null && rows.length === 1) {
-            data = rows[0];
-            let tableContents = '';
-            for (let i = 1; i <= 5; i++) {
-                tableContents += '<tr>';
-                for (let j = 1; j <= 5; j++) {
-                    tableContents += '<td>' + data['sq' + i.toString() + j.toString()] + '</td>'
-                }
-                tableContents += '</tr>'
-            }
-            res.send('<table border="1">' + tableContents + '</table>');
+            res.render('card', rows[0]);
         } else {
             res.send("Nope.");
         }
     });
 });
 
-app.use('/', express.static('public/', { maxAge: 3600*1000 }));
+app.get('/', (req, res) => {
+    return res.render('index');
+});
 
 app.listen(5000, () => console.log('Listening....'));
