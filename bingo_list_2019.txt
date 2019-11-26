@@ -118,3 +118,5 @@ Speaker gets sentimental
 Speaker talks about his own children
 Quote on screen
 Stockphoto
+Speaker adjusts glasses to read own slides
+Slides contain links without URL
