@@ -95,3 +95,5 @@ Somebody gets a call
 Bingo is shouted
 Goodie bag is lost
 Goodie bag is found
+Company is out of goodies
+Somebody leaves the room during a talk
