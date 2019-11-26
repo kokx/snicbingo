@@ -36,6 +36,8 @@
 'Green energy'
 'You'll never need to do <insert something> again'
 'Self-driving <insert vehicle>'
+'Entrepreneur'
+'Design'
 Bus arrives too late (after 10.00h)
 Bus arrives too early (before 9.00h)
 Had to wake up before 7.00h
@@ -82,15 +84,14 @@ Government/law is blamed for something
 Third world country is mentioned
 Live demo
 Speaker tries to give life inspiration
-Any sponsor is mentioned by the host
+Any sponsor is mentioned by the host or speaker
 Committee is stressed/runs around
 Speaker talks about things he does with data
 Dutch university is mentioned
 Live social media feed
-Nedap has a large machine/item in their stand
-Bus is in traffic jam
+Bus is stuck in a traffic jam
 Somebody sneezes too loud
-Somebody gets a call
+Somebody gets a call/message
 Bingo is shouted
 Goodie bag is lost
 Goodie bag is found
@@ -112,3 +113,8 @@ Self-mockery
 Cameraman/woman in front of stage
 Potentie/fuifje is played
 Not enough lunch/diner
+A talk that should be held at A TED event
+Speaker gets sentimental
+Speaker talks about his own children
+Quote on screen
+Stockphoto
