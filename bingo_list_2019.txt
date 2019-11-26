@@ -32,7 +32,6 @@
 'SpaceX'
 'Facebook'
 'Google'
-'Climate change'
 'My research'
 'Green energy'
 'You'll never need to do <insert something> again'
