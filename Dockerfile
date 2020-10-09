@@ -9,6 +9,8 @@ COPY bingo_list_2019.txt .
 COPY package.json .
 COPY yarn.lock .
 
+EXPOSE 5000
+
 RUN "yarn"
 
 CMD ["yarn", "start"]
